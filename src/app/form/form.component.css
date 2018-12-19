@@ -1,8 +1,14 @@
 #form1,#form2{
-    margin-left: 10%;
+    margin-left: 20%;
     margin-top: 10%;
 }
 
 label{
     font-weight: 600;
+}
+
+h1{
+    font:inherit;
+    font-size: 50px;
+    margin-top: 10%;
 }

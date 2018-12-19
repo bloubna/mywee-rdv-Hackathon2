@@ -1,3 +1,10 @@
 .navbar{
     background-color: #000000;
-  }
+}
+
+h1{
+    margin-right: 43%;
+    font: inherit;
+    font-size: 40px;
+    font-weight: 600;
+}

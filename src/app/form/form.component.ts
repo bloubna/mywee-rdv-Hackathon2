@@ -25,6 +25,7 @@ export class FormComponent implements OnInit {
       fin: ['', Validators.required],
       heuredebut: ['', Validators.required],
       heurefin: ['', Validators.required],
+      recaptchaReactive: ['', Validators.required],
     });
     
   }

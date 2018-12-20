@@ -1,113 +1,111 @@
-*{
-  box-sizing:border-box;
-}
+   /* whole container */
+   .container{
+     width: 100%;
+     margin-top: 100px;
+     margin-bottom: 100px;
+   }
 
-.container{
-  margin:0;
-  width:100%;
-  margin-top: 10%;
-}
+   /* whole card wrapper ==> START */
 
-.light{
-  background-color: #fff;
-}
+   .mobile-wrapper {
+     background-color:
+       #FFF;
+     width: 380px;
+     min-height: 45rem;
+     max-height: 45rem;
+     margin: auto;
+     padding: 10px 0 20px;
+     border-radius: 10px;
+     box-shadow: 0px 10px 30px -10px #000;
+     transition: .5s;
+   }
 
-.calendar{
-  width:370px;
-  box-shadow: 0px 0px 35px -16px rgba(0,0,0,0.75);
-  font-family: 'Roboto', sans-serif;
-  padding: 20px 30px;
-  color:#363b41;
-  display: inline-block;
-}
+   /* on hover zoom out */
 
-.calendar_header{
-  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
-}
+   .mobile-wrapper:hover {
+     transform: scale(1.05);
+     transition: .5s;
+   }
 
-.header_day{
-  color:rgb(194, 189, 189);
-  font-size:20px;
-}
-.calendar_plan{
-  margin:20px 0 40px;
-}
-.cl_plan{
-  width:100%;
-  height: 140px;
-  background-image: linear-gradient(-222deg, #FF8494, #ffa9b7);
-  box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
-  padding:30px;
-  color:#fff;
-}
+   /* whole card wrapper ==> END */
 
-.cl_date{
-  font-size:20px;
-  margin: 20px 0;
-  display: inline-block;
-}
 
-.cl_add{
-  display: inline-block;
-  width: 40px;
-  height:40px;
-  border-radius:50%;
-  background-color: #fff;
-  cursor: pointer;
-  margin:0 0 0 65px;
-  color:#c2c2c2;
-  padding: 11px 13px;
-}
-.calendar_events{
-  color:rgb(185, 179, 179);
-}
-.ce_title{
-  font-size:14px;
-}
+   /* top section */
+   .header {
+     padding-bottom: 15px;
+     margin-bottom: 40px;
+   }
 
-.event_item{
-  margin: 18px 0;
-  padding:5px;
-  cursor: pointer;
-}
-  :hover{
-    background-image: linear-gradient(-222deg, #FF8494, #ffa9b7);
-    box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
-  }
-  .ei_Dot {
-      background-color: #fff;
+   /* box where date is indicated */
+
+   .day-box {
+     background: linear-gradient(to left,
+       #60B9E5, rgba(51, 60, 70, .25)),
+       #60B9E5;
+     color:
+       #FFF;
+     padding: 37px 40px;
+     position: relative;
+     box-shadow: 0px 0px 40px -9px #60B9E5;
+     margin-bottom: 50px;
+
+   }
+
+   /* styling of date */
+
+   .date-title {
+     font-size: 20px;
+     margin: 7px 0 0 0;
+     letter-spacing: 0.5px;
+     font-weight: 600;
+     text-align: center;
+   }
+
+   /* sub-heading */
+
+   .available-hours .container h3 {
+     color:
+       #333;
+     font-size: 17px;
+     margin-bottom: 30px;
+     text-align: center;
+   }
+
+   /* each event line */
+
+   .events-wrapper .event {
+     padding-left: 30px;
+     margin-bottom: 30px;
+     cursor: pointer;
+   }
+
+   /* event time */
+
+   .event__time {
+     margin: 0;
+     color:
+       #555;
+     font-size: 15px;
+     font-weight: 800;
+     letter-spacing: 1px;
+   }
+
+    /* button  */
+
+    .btn {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      background-color: #60B9E5;
+      color: #FFF;
+      font-weight: 600;
+      transition: .5s;
     }
-    .ei_Copy,.ei_Title {
-      color:#fff;
+
+    .btn:hover {
+      background-color: #333C46;
+      transition: .5s;
     }
-.ei_Dot,.ei_Title{
-  display:inline-block;
-}
-
-.ei_Dot{
-  border-radius:50%;
-  width:10px;
-  height: 10px;
-  background-color: rgb(185, 179, 179);
-  box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
-}
-.dot_active{
-  background-color: #FF8494;
-}
-
-.ei_Title{
-  margin-left:10px;
-  color:#363b41;
-}
-
-.ei_Copy{
-  font-size:12px;
-  margin-left:27px;
-}
 .nonDispo {
   background-color: red;
   color: white;
-}
-.taille {
-  font-size: 50px;
 }

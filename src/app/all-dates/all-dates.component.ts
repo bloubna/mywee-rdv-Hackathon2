@@ -39,5 +39,3 @@ export class AllDatesComponent implements OnInit {
 
     }
   }
-
-}

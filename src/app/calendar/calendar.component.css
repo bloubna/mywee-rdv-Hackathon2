@@ -134,3 +134,11 @@
   color: #363b41;
   display: inline-block;
 }
+
+h1{
+  margin-bottom: 5%;
+}
+
+p{
+  font-size: 20px;
+}

@@ -20,8 +20,7 @@ export class AllDatesComponent implements OnInit {
   constructor(private service: CalendarService, private modalService: NgbModal) { }
 
   ngOnInit() {
-        // Calls Calendar API
-        this.dates = this.service.getDateArray();
+        this.dates = this.service.dates;
 
         this.dates.map(x => {
           this.objetTest.push({date: x, event: []});

@@ -9,7 +9,9 @@ export class CalendarService {
 
   dates: any[] = [];
 
-  constructor(private service: HttpClient) { }
+  constructor(private service: HttpClient) {
+    this.getDateArray();
+   }
 
   readAll(): Observable<any> {
     return this.service.get<any>('http://localhost:3000/api/calendar/events');
@@ -29,8 +31,6 @@ export class CalendarService {
       this.dates.push(new Date(dt));
       dt.setDate(dt.getDate() + 1);
     }
-    // console.log(this.dates);
-    return this.dates;
   }
 
 }

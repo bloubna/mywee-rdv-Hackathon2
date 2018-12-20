@@ -1,0 +1,11 @@
+
+
+label{
+    font-weight: 600;
+}
+
+h1{
+    font:inherit;
+    font-size: 50px;
+    margin-top: 10%;
+}

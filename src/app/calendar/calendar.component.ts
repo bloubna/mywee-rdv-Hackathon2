@@ -25,10 +25,10 @@ export class CalendarComponent implements OnInit {
             return {
               title: event.summary,
               date: event.start.date ? event.start.date : event.start.dateTime.slice(0, 10),
-              start: event.start.date ? "disponible" : event.start.dateTime.slice(11, 16),
-              end: event.end.date ? "indéfini" : event.end.dateTime.slice(11, 16)
-            }
-          })
+              start: event.start.date ? 'disponible' : event.start.dateTime.slice(11, 16),
+              end: event.end.date ? 'indéfini' : event.end.dateTime.slice(11, 16)
+            };
+          });
         })
       )
       .subscribe(res => {

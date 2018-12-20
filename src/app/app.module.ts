@@ -12,7 +12,7 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import { AllDatesComponent } from './all-dates/all-dates.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     RecaptchaFormsModule,
     HttpClientModule,
     FlashMessagesModule.forRoot(),
-    NgxPaginationModule
+    NgxPaginationModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

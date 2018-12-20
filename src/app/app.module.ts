@@ -10,13 +10,16 @@ import { ReactiveFormsModule }  from '@angular/forms';
 import { RecaptchaModule  } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import {FlashMessagesModule} from 'angular2-flash-messages';
+import { AllDatesComponent } from './all-dates/all-dates.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarComponent,
-    FormComponent
+    FormComponent,
+    AllDatesComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
     RecaptchaFormsModule,
     HttpClientModule,
     FlashMessagesModule.forRoot(),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

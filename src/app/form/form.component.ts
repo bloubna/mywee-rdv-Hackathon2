@@ -15,6 +15,7 @@ export class FormComponent implements OnInit {
   constructor(private fb: FormBuilder, private service: RdvmailService, private flashMessages: FlashMessagesService) { }
   
   ngOnInit() {
+    //Champ requis pour l'envoi du mail
     this.rdvForm = this.fb.group({
       societe: [''],
       nom: ['', Validators.required],
@@ -30,6 +31,7 @@ export class FormComponent implements OnInit {
     
   }
   
+  //Modal confirmant l'envoi du mail
   mailForm(form){
     this.service.sendMail(form).subscribe(() => {
       swal('Formulaire de prise de rendez-vous', 'Votre demande à bien été envoyée', 'success');

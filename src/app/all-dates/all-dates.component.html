@@ -19,7 +19,6 @@
     <p class="ce_title">Horaires disponible</p>
     <div class="event_item" *ngFor="let event of item.event">
       <div class="ei_Dot dot_active"></div>
-      <div class="ei_Title" routerLink="/form">{{event.start}}</div>
       <div class="ei_Copy">{{event.title}}</div>
       <div class="ei_Title" routerLink="/form">{{event.start.dateTime | date: 'h:mm'}} - {{event.end.dateTime | date: 'h:mm'}} Non disponible </div>
     </div>

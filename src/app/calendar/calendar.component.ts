@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 export class CalendarComponent implements OnInit {
 
   events: any;
+  dates: any[] = [];
 
   constructor(private service: CalendarService) { }
 
@@ -33,47 +34,9 @@ export class CalendarComponent implements OnInit {
       .subscribe(res => {
         this.events = res;
       });
+
+    this.dates = this.service.getDateArray();
+
   }
 
-
-  // Dates
-      checkDate() {
-        const now = new Date();
-
-        const weekday = new Array(7);
-        weekday[0] = 'Dimanche';
-        weekday[1] = 'Lundi';
-        weekday[2] = 'Mardi';
-        weekday[3] = 'Mercredi';
-        weekday[4] = 'Jeudi';
-        weekday[5] = 'Vendredi';
-        weekday[6] = 'Samedi';
-
-        const date: any = now.getDate();
-        const month: any = now.getMonth();
-
-        // console.log(`${date} ${today}`);
-        return (`${date}`);
-
-      }
-
-      checkDay() {
-        const now = new Date();
-
-        const weekday = new Array(7);
-        weekday[0] = 'Dimanche';
-        weekday[1] = 'Lundi';
-        weekday[2] = 'Mardi';
-        weekday[3] = 'Mercredi';
-        weekday[4] = 'Jeudi';
-        weekday[5] = 'Vendredi';
-        weekday[6] = 'Samedi';
-
-        const today: any = weekday[now.getDay()];
-
-
-        // console.log(`${date} ${today}`);
-        return (`${today}`);
-
-      }
 }

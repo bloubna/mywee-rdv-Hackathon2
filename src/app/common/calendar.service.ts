@@ -17,19 +17,20 @@ export class CalendarService {
 
   getDateArray(): any {
 
-    const startDate = new Date(); //YYYY-MM-DD
-    const endDate = new Date(); //YYYY-MM-DD
+    const startDate = new Date(); // YYYY-MM-DD
+    const endDate = new Date(); // YYYY-MM-DD
 
-    endDate.setDate(endDate.getDate() + 30)
+    endDate.setDate(endDate.getDate() + 30);
 
 
-    let dt = new Date(startDate);
+    const dt = new Date(startDate);
     while (dt <= endDate) {
-      
+
       this.dates.push(new Date(dt));
       dt.setDate(dt.getDate() + 1);
     }
+    // console.log(this.dates);
     return this.dates;
-  };
+  }
 
 }

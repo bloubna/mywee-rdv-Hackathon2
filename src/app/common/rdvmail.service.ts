@@ -23,7 +23,5 @@ export class RdvmailService {
   sendMail(body) {
     return this.http.post('http://localhost:3000/contact', body);
   }
-  sendM() {
-    return this.http.post('https://www.googleapis.com/calendar/v3/calendars/calendarId/events', this.bode);
-  }
+
 }

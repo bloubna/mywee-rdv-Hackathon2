@@ -37,7 +37,7 @@ export class FormComponent implements OnInit {
 // appel service mail pour envoyer le contenu du formulaire par mail
     this.serviceMail.sendMail(form).subscribe(() => {
       // Modal confirmant l'envoi du mail
-      swal('Formulaire de prise de rendez-vous', 'Votre demande à bien été envoyée', 'success');
+      swal('Formulaire de prise de rendez-vous', 'Votre demande à bien été envoyée, elle sera traitée et vous recevrez un e-mail de confirmation.', 'success');
     });
   }
 }

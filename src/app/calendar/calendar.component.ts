@@ -24,56 +24,56 @@ export class CalendarComponent implements OnInit {
             return {
               title: event.summary,
               date: event.start.date ? event.start.date : event.start.dateTime.slice(0, 10),
-              start: event.start.date ? "disponible" : event.start.dateTime.slice(11, 16),
-              end: event.end.date ? "indéfini" : event.end.dateTime.slice(11, 16)
-            }
-          })
+              start: event.start.date ? 'disponible' : event.start.dateTime.slice(11, 16),
+              end: event.end.date ? 'indéfini' : event.end.dateTime.slice(11, 16)
+            };
+          });
         })
       )
       .subscribe(res => {
         this.events = res;
       });
   }
-      
-  
+
+
   // Dates
-      checkDate(){
+      checkDate() {
         const now = new Date();
 
-        let weekday = new Array(7);
-        weekday[0] = "Dimanche";
-        weekday[1] = "Lundi";
-        weekday[2] = "Mardi";
-        weekday[3] = "Mercredi";
-        weekday[4] = "Jeudi";
-        weekday[5] = "Vendredi";
-        weekday[6] = "Samedi";
-            
-        let date: any = now.getDate();
-        let month: any = now.getMonth();
-     
+        const weekday = new Array(7);
+        weekday[0] = 'Dimanche';
+        weekday[1] = 'Lundi';
+        weekday[2] = 'Mardi';
+        weekday[3] = 'Mercredi';
+        weekday[4] = 'Jeudi';
+        weekday[5] = 'Vendredi';
+        weekday[6] = 'Samedi';
+
+        const date: any = now.getDate();
+        const month: any = now.getMonth();
+
         // console.log(`${date} ${today}`);
         return (`${date}`);
-  
-      };
 
-      checkDay(){
+      }
+
+      checkDay() {
         const now = new Date();
 
-        let weekday = new Array(7);
-        weekday[0] = "Dimanche";
-        weekday[1] = "Lundi";
-        weekday[2] = "Mardi";
-        weekday[3] = "Mercredi";
-        weekday[4] = "Jeudi";
-        weekday[5] = "Vendredi";
-        weekday[6] = "Samedi";
-            
-        let today: any = weekday[now.getDay()];
-       
-     
+        const weekday = new Array(7);
+        weekday[0] = 'Dimanche';
+        weekday[1] = 'Lundi';
+        weekday[2] = 'Mardi';
+        weekday[3] = 'Mercredi';
+        weekday[4] = 'Jeudi';
+        weekday[5] = 'Vendredi';
+        weekday[6] = 'Samedi';
+
+        const today: any = weekday[now.getDay()];
+
+
         // console.log(`${date} ${today}`);
         return (`${today}`);
-  
-      };
+
+      }
 }

@@ -1,15 +1,18 @@
     <div class="container">
         <div class="row justify-content-between">
       <div class="calendar light col xs-12 m-3" *ngFor="let event of events | slice:0:5; let i=index">
+
         <div class="calendar_header">
           <h1 class = "header_title"></h1>
           <p class="header_day"> {{this.checkDay()}}</p>
         </div>
+
         <div class="calendar_plan">
           <div class="cl_plan">
             <div class="cl_date">{{this.checkDate()}}</div>
           </div>
         </div>
+
         <div class="calendar_events">
           <p class="ce_title">A venir</p>
           <div class="event_item">
@@ -41,4 +44,4 @@
       </div>
       </div>
   </div>
-      
+

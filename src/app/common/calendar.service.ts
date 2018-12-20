@@ -13,10 +13,11 @@ export class CalendarService {
     this.getDateArray();
    }
 
+   // retourn la list des events depuis l'api google
   readAll(): Observable<any> {
     return this.service.get<any>('http://localhost:3000/api/calendar/events');
   }
-
+// fonction remplit le tableau dates avec les date d'aujourd'hui jusqu'a 30 jours
   getDateArray(): any {
 
     const startDate = new Date(); // YYYY-MM-DD

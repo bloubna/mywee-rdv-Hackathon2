@@ -19,7 +19,6 @@ export class CalendarComponent implements OnInit {
 
   constructor(private service: CalendarService, private modalService: NgbModal) { }
 
-  
   ngOnInit() {
 
     this.dates = this.service.dates;
@@ -40,9 +39,10 @@ export class CalendarComponent implements OnInit {
           }
         });
       });
-      console.log(this.objetTest);
+
     });
 }
+// fonction qui ouvre la modal chargé d'afficher le formulaire pour la prise de rendez-vous
 openLg(content) {
   this.modalService.open(content, { size: 'lg' });
 }

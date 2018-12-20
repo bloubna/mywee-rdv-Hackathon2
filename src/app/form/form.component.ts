@@ -11,11 +11,12 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class FormComponent implements OnInit {
   rdvForm: FormGroup;
-  
-  constructor(private fb: FormBuilder, private service: RdvmailService, private flashMessages: FlashMessagesService) { }
-  
+
+  constructor(private fb: FormBuilder, private serviceMail: RdvmailService, private flashMessages: FlashMessagesService) { }
+
   ngOnInit() {
-    //Champ requis pour l'envoi du mail
+
+    // Définition des champs pour le formulaire
     this.rdvForm = this.fb.group({
       societe: [''],
       nom: ['', Validators.required],
@@ -28,12 +29,14 @@ export class FormComponent implements OnInit {
       heurefin: ['', Validators.required],
       recaptchaReactive: ['', Validators.required],
     });
-    
+
   }
-  
-  //Modal confirmant l'envoi du mail
-  mailForm(form){
-    this.service.sendMail(form).subscribe(() => {
+
+
+  mailForm(form) {
+// appel service mail pour envoyer le contenu du formulaire par mail
+    this.serviceMail.sendMail(form).subscribe(() => {
+      // Modal confirmant l'envoi du mail
       swal('Formulaire de prise de rendez-vous', 'Votre demande à bien été envoyée', 'success');
     });
   }

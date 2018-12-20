@@ -13,13 +13,15 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import { AllDatesComponent } from './all-dates/all-dates.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarComponent,
     FormComponent,
-    AllDatesComponent
+    AllDatesComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

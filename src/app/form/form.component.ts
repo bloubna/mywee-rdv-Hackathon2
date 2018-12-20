@@ -29,7 +29,7 @@ export class FormComponent implements OnInit {
     });
     
   }
-
+  
   mailForm(form){
     this.service.sendMail(form).subscribe(() => {
       swal('Formulaire de prise de rendez-vous', 'Votre demande à bien été envoyée', 'success');

@@ -4,6 +4,7 @@ import { RdvmailService } from '../common/rdvmail.service';
 import swal from 'sweetalert';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',

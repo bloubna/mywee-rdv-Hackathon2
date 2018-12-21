@@ -7,15 +7,16 @@
 
 
   <!-- ======= debut card-wrapper =======-->
+
   <div class="row justify-content-between mt-5">
 
     <div class="mobile-wrapper col-xs-12 col-sm-12 col-md-2 col-lg-2" *ngFor="let item of objetTest | slice:0:5;">
 
       <header class="header"></header>
 
-
       <section class="day-box" id="day-box">
-        <h3 class="date-title">{{item.date | date: ' E dd MMM yyyy'}}</h3>
+        <h3 class="date-title">{{item.date | date: ' EEEE '}}</h3>
+        <h3 class="date-title">{{item.date | date: ' dd MMM yy'}}</h3>
       </section>
 
       <div class="available-hours">
@@ -23,8 +24,8 @@
           <h3>Horaires non disponible</h3>
           <div class="events-wrapper">
             <div class="event" *ngFor="let event of item.event">
-              <h4 class="event__time nonDispo">{{event.start.dateTime | date: 'hh:mm'}} - {{event.end.dateTime | date:
-                'hh:mm'}}</h4>
+              <h4 class="event__time nonDispo">{{event.start.dateTime | date: 'HH:mm'}} - {{event.end.dateTime | date:
+                'HH:mm'}}</h4>
             </div>
           </div>
         </div>
@@ -37,9 +38,8 @@
     <button class="btn btn-btn-primary" routerLink="/alldate">+ Voir plus d'horaires</button>
   </div>
 
-</div> 
-
   <!-- debut modal -->
+
   <ng-template #content let-modal>
     <div class="modal-header">
       <h4 class="modal-title"></h4>
@@ -54,6 +54,5 @@
       <button type="button" class="btn btn-light" (click)="modal.close('Close click')"> Fermer </button>
     </div>
   </ng-template>
+
   <!-- fin modal -->
-
-

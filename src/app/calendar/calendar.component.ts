@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CalendarService } from '../common/calendar.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
@@ -20,10 +21,11 @@ export class CalendarComponent implements OnInit {
   constructor(private service: CalendarService, private modalService: NgbModal) { }
 
   ngOnInit() {
-
+// renitialisation du tableau dates
     this.dates = this.service.dates;
 
     this.dates.map(x => {
+      // renitialiser le tableau objetTest avec date et l'event qui correspond
       this.objetTest.push({date: x, event: []});
     });
     console.log(this.objetTest);

@@ -7,6 +7,7 @@
 
 
   <!-- ======= debut card-wrapper =======-->
+
   <div class="row justify-content-between mt-5">
 
     <div class="mobile-wrapper col-xs-12 col-sm-12 col-md-2 col-lg-2" *ngFor="let item of objetTest | slice:0:5;">
@@ -31,10 +32,14 @@
       </div>
     </div>
   </div>
+  <!-- ======= fin card-wrapper =======-->
+
   <div class="d-flex justify-content-center">
     <button class="btn btn-white text-dark" routerLink="/alldate">+ Voir plus d'horaires</button>
   </div>
+
   <!-- debut modal -->
+
   <ng-template #content let-modal>
     <div class="modal-header">
       <h4 class="modal-title"></h4>
@@ -49,4 +54,5 @@
       <button type="button" class="btn btn-light" (click)="modal.close('Close click')"> Fermer </button>
     </div>
   </ng-template>
+
   <!-- fin modal -->

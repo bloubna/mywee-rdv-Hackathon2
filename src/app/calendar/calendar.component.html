@@ -22,7 +22,7 @@
 
       <div class="available-hours">
         <div class="container">
-          <h3 >Horaires non disponible</h3>
+          <h3>Horaires non disponible</h3>
           <div class="events-wrapper">
             <div class="event" *ngFor="let event of item.event">
               <h4 class="event__time nonDispo">{{event.start.dateTime | date: 'hh:mm'}} - {{event.end.dateTime | date: 'hh:mm'}}</h4>

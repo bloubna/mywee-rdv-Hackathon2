@@ -4,9 +4,8 @@
 
 h1{
     margin-right: 43%;
-    font: inherit;
+    font-family: "Open Sans";
     font-size: 40px;
     font-weight: 600;
     cursor: pointer;
 }
-

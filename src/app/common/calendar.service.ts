@@ -27,11 +27,12 @@ export class CalendarService {
 
 
     const dt = new Date(startDate);
-    while (dt <= endDate) {
-
+    
+    while (dt <= endDate) {       
       this.dates.push(new Date(dt));
       dt.setDate(dt.getDate() + 1);
+      }
     }
   }
 
-}
+

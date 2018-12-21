@@ -1,53 +1,60 @@
 <div class="container mx-auto">
 
-  <button class="btn btn-white text-dark"  routerLink="">Retour à l'accueil</button>
-    <p class="text-center">Heure d'ouverutre : 9h-12h 14h-18h</p>
+  <button class="btn btn-primary" routerLink="">Retour à l'accueil</button>
+  <p class="text-center">Heure d'ouverutre : 9h-12h 14h-18h</p>
   <p class="text-center">Votre demande sera traitée et vous recevrez un e-mail de confirmation .</p>
-    <button type="button" (click)="openLg(content)" class="btn btn-primary btn-lg btn-block d-flex justify-content-center"> Réserver un Rendez-vous </button>
-<div class="my-1 d-flex justify-content-center taille">
-  <pagination-controls previousLabel="" nextLabel="" responsive="true" (pageChange)="page = $event"></pagination-controls>
-</div>
+  <button type="button" (click)="openLg(content)" class="btn btn-primary btn-lg btn-block d-flex justify-content-center">
+    Réserver un Rendez-vous </button>
 
-<div class="row justify-content-between mt-5">
+  <!-- ======= start card-wrapper + slider =======-->
+  <swiper [config]="config">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide mobile-wrapper col-xs-12 col-sm-12 col-md-2 col-lg-2 " *ngFor="let item of objetTest">
 
-<div class="mobile-wrapper col-xs-12 col-sm-12 col-md-2 col-lg-2" *ngFor="let item of objetTest | paginate:{itemsPerPage:5, currentPage: page}">
-<!--======= Top =======-->
+        <header class="header"></header>
 
-<header class="header"></header>
-<!--======= Day =======-->
+        <section class="day-box" id="day-box">
+          <h3 class="date-title">{{item.date | date: ' E dd MMM yyyy'}}</h3>
+        </section>
 
-<section class="day-box" id="day-box">
-  <h3 class="date-title">{{item.date | date: ' E dd MMM yyyy'}}</h3>
-</section>
+        <div class="available-hours">
+          <div class="container">
+            <h3>Horaires non disponible</h3>
+            <div class="events-wrapper">
+              <div class="event" *ngFor="let event of item.event">
+                <h4 class="event__time nonDispo">{{event.start.dateTime | date: 'hh:mm'}} - {{event.end.dateTime |
+                  date:
+                  'hh:mm'}}</h4>
 
-<div class="available-hours">
-  <div class="container">
-    <h3>Horaires non disponible</h3>
-    <div class="events-wrapper">
-      <div class="event" *ngFor="let event of item.event">
-        <h4 class="event__time nonDispo">{{event.start.dateTime | date: 'hh:mm'}} - {{event.end.dateTime | date: 'hh:mm'}}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Add Pagination -->
+    <div class="swiper-scrollbar"></div>
+    <!-- Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </swiper>
+  <!-- ======= end card-wrapper + slider =======-->
+</div>
+
+<!-- debut modal -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title"></h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-</div>
-</div>
-</div>
-
-</div>
-
-    <!-- debut modal -->
-    <ng-template #content let-modal>
-      <div class="modal-header">
-          <h4 class="modal-title"></h4>
-          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-              <span aria-hidden="true">&times;</span>
-          </button>
-      </div>
-      <div class="modal-body">
-        <app-form></app-form>
-      </div>
-      <div class="modal-footer">
-          <button type="button" class="btn btn-light" (click)="modal.close('Close click')"> Fermer </button>
-      </div>
-  </ng-template>
+  <div class="modal-body">
+    <app-form></app-form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')"> Fermer </button>
+  </div>
+</ng-template>
 <!-- fin modal -->

@@ -44,4 +44,18 @@ export class AllDatesComponent implements OnInit {
     openLg(content) {
       this.modalService.open(content, { size: 'lg' });
     }
+
+    config: any = {
+      scrollbar: {
+      el: '.swiper-scrollbar',
+      hide:true
+      },
+      paginationClickable: true,
+      navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+      },
+      spaceBetween: 40
+  };
+
 }

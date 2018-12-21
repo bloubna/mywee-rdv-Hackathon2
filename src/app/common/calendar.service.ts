@@ -17,18 +17,19 @@ export class CalendarService {
   readAll(): Observable<any> {
     return this.service.get<any>('http://localhost:3000/api/calendar/events');
   }
-// fonction remplit le tableau dates avec les date d'aujourd'hui jusqu'a 30 jours
+// fonction remplit le tableau dates avec les date d'aujourd'hui jusqu'a 30 jours aprés.
+
   getDateArray(): any {
 
-    const startDate = new Date(); // YYYY-MM-DD
-    const endDate = new Date(); // YYYY-MM-DD
+    const startDate = new Date(); // YYYY-MM-DD date d'aujourd'hui
+    const endDate = new Date(); // YYYY-MM-DD date de fin = date d'aujourd'hui + 30
 
     endDate.setDate(endDate.getDate() + 30);
 
 
     const dt = new Date(startDate);
-    
-    while (dt <= endDate) {       
+    while (dt <= endDate) {
+// chaque itération en ajout un jour à partir de notre date de debart
       this.dates.push(new Date(dt));
       dt.setDate(dt.getDate() + 1);
       }
